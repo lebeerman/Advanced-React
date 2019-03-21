@@ -126,9 +126,8 @@ graphQL! intro
 - GraphQL: single endpoint - REQ query an item{ props } -> RES Receive Data
 - Not a replacement for good queries. But provides a different standarm
 
-11
+11 PRISMA - OS tool for working with GraphQL.
 
-PRISMA - OS tool for working with GraphQL.
 - login
 - init
 - config env vars
@@ -137,5 +136,28 @@ PRISMA - OS tool for working with GraphQL.
   -> setup datamodel.graphql
   on a deploy the datamodel will get synced up with the prima endpoint settings.
 - setup an npm run deploy alias in the package.json:
-  -    `"deploy": "prisma deploy --env-file variables.env"`
-  -
+  - `"deploy": "prisma deploy --env-file variables.env"`
+
+12 GraphQL Yoga
+
+- uses express, apollo-server.
+- resolvers
+
+  create Server, wire up express server + file structure to handle prisma, graphql, queries, mutations, and data schema.
+
+13 Query and Mutations in GraphQL
+
+- GraphQL is TYPED!
+- ! = required - means the value cannot be null.
+- NEVER USE THE GLOBAL objects
+- mocked up the get/set queries
+
+14 Item Creation, Prisma Yoga Flow
+(steps for adding and editing the backend)
+
+- Type to datamodel
+- deploy to primsa -> makes it available in GraphQL Layer
+- in graphQL - create new queries and mutations...
+- handle the complexity of these changes in resolver functions
+
+15
