@@ -150,7 +150,7 @@ graphQL! intro
 - GraphQL is TYPED!
 - ! = required - means the value cannot be null.
 - NEVER USE THE GLOBAL objects
-- mocked up the get/set queries
+- mocked up the get/f set queries
 
 14 Item Creation, Prisma Yoga Flow
 (steps for adding and editing the backend)
@@ -161,3 +161,101 @@ graphQL! intro
 - handle the complexity of these changes in resolver functions
 
 15
+
+Apollo replaces redux. And way way more.
+
+- Catches errors
+- manages stateless
+- quick to setup
+
+Added next-with-apollo.
+
+- server-side rendering tool
+- X
+
+16 React Meets GraphQL
+
+rcc
+rccp - bring in proptypes -> use to type a component
+
+hook up the back end the front. uses a HOC
+
+17 Create Items With Mutations
+
+created a CreateItem Component.
+- inputs in react - changable field is in the DOM and in state. 2 places for the data to live.
+- create a gql mutation:
+    - from the schema - use the shape of the data expected
+    - specifcy the inputs and the response.
+- fieldset tag allows for the slick loading feature. pretty cool. Uses the 'disabled' attribute.
+- aria-busy = accessibility attribute
+- keyframes on styles allow for slick easy animation
+
+- () => () // paren in ES6 creates an implicit return
+- using router on the response to reroute on a successful submit
+
+18 images
+
+- using cloudinary
+- cloudinary is cool - does some neat image editing stuff on the fly.
+
+19 Edit/UPDATE Functionality
+
+- UPDATE:
+  - created a MUTATION for the update function
+  - created a query for getting a single item
+  - edited the schema for item and mutations
+  FE - added the UpdateItem file
+
+20 Added the delete Functionality
+
+- DELETE - Mutation, reused the single item query.
+- Updated the FE UI using the apollo cache to get all items /update the cache after the delete route runs.
+
+21 Single Items
+
+- possible to edit the head usign the Head component = SIDE EFFECTS
+
+22 Pagination
+
+- Create pagination components
+
+23 Pagination and Cache Invalidation
+
+- address/comment on the issues with Apollo caching items.
+
+24 User Signup + Permissions Flow
+
+- any time you write new query/mutations -> you must write resolvers
+- Yoga server must be editted to work with cookies
+- JWT - sends cookie/token
+  (instead of localstorage:
+    req - pulls from local and flies it over the req
+    localestorage doesnt allow for serverside rendering.
+    This causes the blip/glitch of the FE UI.
+    )
+  - serverside rendering will send the token/cookie for the server to work with
+  - Introduce Express!!! cookie parser! and middleware
+  - requiring middleware in the mutations file is fine as it is in the server app flow.
+
+25 User Signup on the Front End
+
+- Form defaults to GET in JS - DANGER - Passwords never should go in the URL bar!!!
+
+26 - Currently Logged in User with Middleware and Render Props
+
+- Application tab => Cookies! Token!
+- Create a HOC which acts as a provider - injecting the User query to components it wraps
+- rolled a user token handler middleware, query, and resolver
+
+27 -
+
+- schema -> resolver -> FE modification
+- TODO : User Flow
+
+28 - Sign out button
+
+- Success Message return - type
+
+29 - Backend Password Reset
+
